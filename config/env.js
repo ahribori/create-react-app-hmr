@@ -32,6 +32,10 @@ function getClientEnvironment(publicUrl) {
       }, {})
   };
 
+  // Custom dotenv
+  require('dotenv').load();
+  stringified['process.env'].FULL_SERVER_URL = '"' + process.env.FULL_SERVER_URL + '"';
+
   return { raw, stringified };
 }
 
